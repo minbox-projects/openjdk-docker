@@ -8,18 +8,18 @@ RUN apt-get update \
     && locale-gen en_US.UTF-8 \
     && rm -rf /var/lib/apt/lists/*
 
-ENV JAVA_VERSION jdk-17.0.3+7_openj9-0.32.0
+ENV JAVA_VERSION jdk-17.0.4+8_openj9-0.33.0
 
 RUN set -eux; \
     ARCH="$(dpkg --print-architecture)"; \
     case "${ARCH}" in \
        amd64|x86_64) \
-         ESUM='dad35fec82047e3a82c6e2dda8b53ee763b55aaedaed13b7b130856f4a3ffd35'; \
-         BINARY_URL='https://github.com/minbox-projects/openjdk17-binaries/releases/download/openjdk-17.0.3%2B7/ibm-semeru-open-jre_x64_linux_17.0.3_7_openj9-0.32.0.tar.gz'; \
+         ESUM='b2c176f8aa8cc7138d4c22ce9298d8f49597e1d8e3fdd33125898e5ee0182c93'; \
+         BINARY_URL='https://github.com/minbox-projects/openjdk17-binaries/releases/download/openjdk-17.0.4%2B8/ibm-semeru-open-jre_x64_linux_17.0.4_8_openj9-0.33.0.tar.gz'; \
          ;; \
        aarch64|arm64) \
-         ESUM='f899948ea0c5dc80a66f801db585939a25a4ae7e1f21a9a8f3bf3749c3baa87f'; \
-         BINARY_URL='https://github.com/minbox-projects/openjdk17-binaries/releases/download/openjdk-17.0.3%2B7/ibm-semeru-open-jre_aarch64_linux_17.0.3_7_openj9-0.32.0.tar.gz'; \
+         ESUM='6c40c1e0d7ee0509c44465e9f26dd970904137a95fd751e6447b1d6a9ef5092a'; \
+         BINARY_URL='https://github.com/minbox-projects/openjdk17-binaries/releases/download/openjdk-17.0.4%2B8/ibm-semeru-open-jre_aarch64_linux_17.0.4_8_openj9-0.33.0.tar.gz'; \
          ;; \
        *) \
          echo "Unsupported arch: ${ARCH}"; \
