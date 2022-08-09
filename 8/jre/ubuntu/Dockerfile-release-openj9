@@ -14,11 +14,11 @@ RUN set -eux; \
     ARCH="$(dpkg --print-architecture)"; \
     case "${ARCH}" in \
        amd64|x86_64) \
-         ESUM='b2c176f8aa8cc7138d4c22ce9298d8f49597e1d8e3fdd33125898e5ee0182c93'; \
+         ESUM='0d4fe62716b9da2ccce324b5b46d57e8d47e5dfb5d128f87e16135ee9bc36cdc'; \
          BINARY_URL='https://github.com/minbox-projects/openjdk8-binaries/releases/download/openjdk-8u345-b01/ibm-semeru-open-jre_x64_linux_8u345b01_openj9-0.33.0.tar.gz'; \
          ;; \
        aarch64|arm64) \
-         ESUM='6c40c1e0d7ee0509c44465e9f26dd970904137a95fd751e6447b1d6a9ef5092a'; \
+         ESUM='03caff41622e84a6e7fa66a225414a9b6eefb38dd215f830cae0bc4bbfc55b5c'; \
          BINARY_URL='https://github.com/minbox-projects/openjdk8-binaries/releases/download/openjdk-8u345-b01/ibm-semeru-open-jre_aarch64_linux_8u345b01_openj9-0.33.0.tar.gz'; \
          ;; \
        *) \
