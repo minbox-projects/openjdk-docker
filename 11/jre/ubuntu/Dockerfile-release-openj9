@@ -8,18 +8,18 @@ RUN apt-get update \
     && locale-gen en_US.UTF-8 \
     && rm -rf /var/lib/apt/lists/*
 
-ENV JAVA_VERSION jdk-11.0.16+8_openj9-0.33.0
+ENV JAVA_VERSION jdk-11.0.20.1+1_openj9-0.40.0
 
 RUN set -eux; \
     ARCH="$(dpkg --print-architecture)"; \
     case "${ARCH}" in \
        amd64|x86_64) \
-         ESUM='ba09711193b8b8664478f3f949b5320232f65c1bdf61f32a885d84de73c02767'; \
-         BINARY_URL='https://github.com/minbox-projects/openjdk11-binaries/releases/download/openjdk-11.0.16%2B8/ibm-semeru-open-jre_x64_linux_11.0.16_8_openj9-0.33.0.tar.gz'; \
+         ESUM='315c4158f93977aa3b85cd4266710bad658c889b8ba1d77033697220c595c4c2'; \
+         BINARY_URL='https://github.com/minbox-projects/openjdk11-binaries/releases/download/openjdk-11.0.20.1%2B1/ibm-semeru-open-jre_x64_linux_11.0.20.1_1_openj9-0.40.0.tar.gz'; \
          ;; \
        aarch64|arm64) \
-         ESUM='49dc05a3e9f3f99c5f8fa466261aa3e33a753694c67cabfa7d3f682e5a2e3685'; \
-         BINARY_URL='https://github.com/minbox-projects/openjdk11-binaries/releases/download/openjdk-11.0.16%2B8/ibm-semeru-open-jre_aarch64_linux_11.0.16_8_openj9-0.33.0.tar.gz'; \
+         ESUM='26473d8dfd63b412ee3df4bffa0d3f7e5071dff23805f8df98ef0723712efb97'; \
+         BINARY_URL='https://github.com/minbox-projects/openjdk11-binaries/releases/download/openjdk-11.0.20.1%2B1/ibm-semeru-open-jre_aarch64_linux_11.0.20.1_1_openj9-0.40.0.tar.gz'; \
          ;; \
        *) \
          echo "Unsupported arch: ${ARCH}"; \
